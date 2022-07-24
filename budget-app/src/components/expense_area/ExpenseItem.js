@@ -2,7 +2,7 @@ import React, { useContext, useState, useCallback } from "react";
 import { ExpenseContext } from "../../contexts/ExpenseContext";
 import "react-datepicker/dist/react-datepicker.css";
 
-const ExpenseItem = ({ expense }) => {
+const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
   const { dispatch } = useContext(ExpenseContext);
   const [expenseName, setExpenseName] = useState(expense.name);
   const [expenseAmount, setExpenseAmount] = useState(expense.amount);
@@ -55,6 +55,7 @@ const ExpenseItem = ({ expense }) => {
         },
       });
       console.log(expense);
+      onExpenseDetailsToggle(expense.id);
     },
     [
       expenseName,
@@ -83,12 +84,34 @@ const ExpenseItem = ({ expense }) => {
         id: expense.id,
       },
     });
-    console.log(expense);
   };
 
   const handleDelete = () => {
     dispatch({ type: "REMOVE_EXPENSE", id: expense.id });
   };
+
+  const toggleExpenseDetails = useCallback(() => {
+    onExpenseDetailsToggle(expense.id)
+  }, [onExpenseDetailsToggle, expense])
+
+  if (!showExpenses.includes(expense.id)) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "200px",
+          backgroundColor: 'green'
+        }}
+        onClick={toggleExpenseDetails}
+      >
+        <div>{expense.name}</div>
+        <div>
+          {expense.amount} {expense.currency}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
