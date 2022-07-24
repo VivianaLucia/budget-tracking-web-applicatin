@@ -15,24 +15,28 @@ const Reports = () => {
   const { categories } = useContext(CategoryContext);
   const { incomes } = useContext(IncomeContext);
 
-  const currencies = ["EUR", "USD"];
+  const currencies = ["EUR", "USD", "GBP", "RSD"];
 
   const exchangeRates = [
     { name: "EUR", rate: "4.9430" },
     { name: "USD", rate: "4.8926" },
+    { name: "GBP", rate: "5.8059" },
+    { name: "RSD", rate: "0.0420" },
+
   ];
 
   return (
     <div>
       <h4>Reports</h4>
-      <div ><CurrentBudget 
-        expenses={expenses}
-        incomes={incomes}
-        exchangeRates={exchangeRates}
-      />
+      <div>
+        <CurrentBudget
+          expenses={expenses}
+          incomes={incomes}
+          exchangeRates={exchangeRates}
+        />
       </div>
       <div className="main-reports">
-        <div  className="chart">
+        <div className="chart">
           <CalculateSpendingBasedOnCategoryList
             categories={categories}
             expenses={expenses}
@@ -45,7 +49,7 @@ const Reports = () => {
           <TotalExpenses exchangeRates={exchangeRates} expenses={expenses} />
         </div>
       </div>
-      
+
       <span className="spendings-on-currency">
         <CalculateSpendingOnCurrency
           currencies={currencies}

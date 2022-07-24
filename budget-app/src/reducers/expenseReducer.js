@@ -15,22 +15,29 @@ export const expenseReducer = (state, action) => {
       ];
     case "REMOVE_EXPENSE":
       const arr = state.filter((expense) => expense.id !== action.id);
-      return [...arr]; //?
+      return [...arr];
 
     case "EDIT_EXPENSE":
-
       const newState = state.map((expense) => {
         if (expense.id === action.expense.id) {
           return {
             id: expense.id,
-            name: action?.expense?.name
-              ? action.expense.name
-              : expense.name,
-            amount: action?.expense?.amount ? action.expense.amount : expense.amount,
-            category: action?.expense?.category ? action.expense.category : expense.category,
-            currency: action?.expense?.currency ? action.expense.currency : expense.currency,
-            description: action?.expense?.description ? action.expense.description : expense.description,
-            dateAdded: action?.expense?.dateAdded ? action.expense.dateAdded : expense.dateAdded
+            name: action?.expense?.name ? action.expense.name : expense.name,
+            amount: action?.expense?.amount
+              ? action.expense.amount
+              : expense.amount,
+            category: action?.expense?.category
+              ? action.expense.category
+              : expense.category,
+            currency: action?.expense?.currency
+              ? action.expense.currency
+              : expense.currency,
+            description: action?.expense?.description
+              ? action.expense.description
+              : expense.description,
+            dateAdded: action?.expense?.dateAdded
+              ? action.expense.dateAdded
+              : expense.dateAdded,
           };
         }
         return expense;

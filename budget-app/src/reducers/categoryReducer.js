@@ -1,6 +1,4 @@
-export const categoryReducer = (state, action) => {   
- 
-
+export const categoryReducer = (state, action) => {
   switch (action.type) {
     case "ADD_CATEGORY":
       return [

@@ -62,17 +62,17 @@ const CalculateSpendingBasedOnCategoryList = ({
         },
       },
       theme: {
-        palette: 'palette8' 
-      }
+        palette: "palette8",
+      },
       //fill: {
-        // colors: [
-        //   "#FF4949",
-        //   "#A149FA",
-        //   "#F900BF",
-        //   "#548CFF",
-        //   "#06FF00",
-        //   "#FBFF00",
-        // ]
+      // colors: [
+      //   "#FF4949",
+      //   "#A149FA",
+      //   "#F900BF",
+      //   "#548CFF",
+      //   "#06FF00",
+      //   "#FBFF00",
+      // ]
       //},
     },
   });
@@ -87,7 +87,12 @@ const CalculateSpendingBasedOnCategoryList = ({
       />
       <button
         onClick={() => setIsOpen(true)}
-        style={{ backgroundColor: "#5C5470", color: "#A2B5BB", borderRadius: "8px", fontSize: "smaller" }}
+        style={{
+          backgroundColor: "#5C5470",
+          color: "#A2B5BB",
+          borderRadius: "8px",
+          fontSize: "smaller",
+        }}
       >
         <TiPlus style={{ color: "#E16428" }} />
         Add category

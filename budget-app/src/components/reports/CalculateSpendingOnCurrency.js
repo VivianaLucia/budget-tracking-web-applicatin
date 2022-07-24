@@ -1,5 +1,6 @@
 import React from "react";
 import { TiArrowDown } from "react-icons/ti";
+import getSymbolFromCurrency from "currency-symbol-map";
 
 const CalculateSpendingOnCurrency = ({ currencies, expenses }) => {
   const totals = [];
@@ -17,20 +18,25 @@ const CalculateSpendingOnCurrency = ({ currencies, expenses }) => {
   });
   return (
     <div>
-      <div style={{ color: "#A2B5BB"}}>
-        Currency based spendings:
-      </div>
+      <div style={{ color: "#A2B5BB" }}>Currency based spendings:</div>
       <ul>
         {totals.map((item, index) => {
           return (
-            <li key={index} style={{ listStyleType: "none", display: "flex" ,fontSize: "medium", textAlign: "center"}}>
-              <TiArrowDown style={{ color: "#F806CC" ,fontSize: "25px"  }}/>
-              {item} {currencies[index]}
+            <li
+              key={index}
+              style={{
+                listStyleType: "none",
+                display: "flex",
+                fontSize: "medium",
+                textAlign: "center",
+              }}
+            >
+              <TiArrowDown style={{ color: "#F806CC", fontSize: "25px" }} />
+              {item} {getSymbolFromCurrency(currencies[index])}
             </li>
           );
         })}
       </ul>
-      
     </div>
   );
 };

@@ -4,7 +4,7 @@ import ExpenseForm from "./ExpenseForm.js";
 import { TiPlus } from "react-icons/ti";
 
 const Expense = () => {
-  const currencies = ["EUR", "USD"];
+  const currencies = ["EUR", "USD","GBP", "RSD"];
   const [isOpen, setIsOpen] = useState(false);
 
   return (

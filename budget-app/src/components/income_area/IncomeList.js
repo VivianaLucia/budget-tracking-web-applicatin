@@ -20,12 +20,20 @@ const IncomeList = () => {
               {showIncome ? (
                 <IncomeItem income={income} key={income.id}></IncomeItem>
               ) : (
-                <div key={income.id}  style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "200px",
-                }}> <div>{income.name}</div>
-                <div>{income.amount} {income.currency}</div> </div>
+                <div
+                  key={income.id}
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "200px",
+                  }}
+                >
+                  {" "}
+                  <div>{income.name}</div>
+                  <div>
+                    {income.amount} {income.currency}
+                  </div>{" "}
+                </div>
               )}
             </li>
           );

@@ -32,7 +32,6 @@ const CategoryForm = () => {
     setName("");
     setDescription("");
   };
-  
 
   return (
     <>
@@ -61,7 +60,6 @@ const CategoryForm = () => {
         <br />
         <input type="submit" style={inputStyle} value="Save category" />
       </form>
-     
     </>
   );
 };

@@ -63,7 +63,7 @@ const IncomeForm = ({ currencies }) => {
         <label style={labelStyle}>
           Amount:
           <input
-            type="text"
+            type="number"
             style={inputStyle}
             value={amount}
             onChange={(event) => setAmount(event.target.value)}

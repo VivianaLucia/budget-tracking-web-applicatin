@@ -91,8 +91,8 @@ const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
   };
 
   const toggleExpenseDetails = useCallback(() => {
-    onExpenseDetailsToggle(expense.id)
-  }, [onExpenseDetailsToggle, expense])
+    onExpenseDetailsToggle(expense.id);
+  }, [onExpenseDetailsToggle, expense]);
 
   if (!showExpenses.includes(expense.id)) {
     return (
@@ -101,7 +101,7 @@ const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
           display: "flex",
           justifyContent: "space-between",
           width: "200px",
-          backgroundColor: 'green'
+          backgroundColor: "green",
         }}
         onClick={toggleExpenseDetails}
       >

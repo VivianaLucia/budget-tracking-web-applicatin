@@ -1,13 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import IncomeList from "./IncomeList.js";
 import IncomeForm from "./IncomeForm.js";
 import { TiPlus } from "react-icons/ti";
 
-
 const Income = () => {
   const currencies = ["EUR", "USD"];
   const [isOpen, setIsOpen] = useState(false);
-
 
   return (
     <div>
