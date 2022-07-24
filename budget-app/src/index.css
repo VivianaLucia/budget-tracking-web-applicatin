@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fbd6d2;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+h2 {
+  margin: 0px;
+}
+
+.app-container {
+  background-color: #2a2438;
+  padding: 50px;
+  margin: 50px auto;
+  border-radius: 25px;
+  max-width: 1000px;
+}
+.reports-container {
+  background-color: #352f44;
+  color: white;
+  font-size: small;
+  color: white;
+  border-radius: 25px;
+  padding: 15px 0px 0px 15px;
+  width: 650px;
+  margin-top: 50px;
+  height: auto;
+}
+.expense-container,
+.income-container {
+  background-color: #352f44;
+  color: white;
+  font-size: small;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 30px 20px 30px 8px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.total-expenses,
+.total-incomes {
+  background-color: #5c5470;
+  border-radius: 10px;
+  margin: 6px;
+  padding: 2px;
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.totals {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+.current-budget {
+  margin: 50px;
+  background-color: #aa14f0;
+  border-radius: 10px;
+  width: 300px;
+  padding: 2px;
+  height: 50px;
+  text-align: center;
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 50px;
+  right: 500px;
+}
+.main-reports {
+  display: flex;
+  height: 300px;
+}
+.spendings-on-currency {
+  position: absolute;
+  top: 225px;
+  right: 250px;
+  font-size: smaller;
+  display: flex;
+}
+
+.category-container {
+  background-color: #34374c;
+  color: white;
+  font-size: small;
+  color: white;
+  border-radius: 25px;
+}
+.expenses-incomes {
+  display: flex;
+}
+.form-input {
+  box-sizing: border-box;
+  height: 39px;
+  width: 426px;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
+}
