@@ -1,3 +1,40 @@
+  Aplicatie web de gestionare a bugetului personal
+		
+						Github link: https://github.com/VivianaLucia/budget-tracking-web-applicatin.git
+                        autor: Sisu Viviana-Lucia
+
+	Descrierea proiectului: 
+	
+	-este o aplicatie web dinamica care permite utilizatorului sa tina o evidenta a veniturilor si cheltuielilor personale
+	-in prim plan este vizibil soldul (bugetul curent, diferenta dintre totalul veniturilor si al cheltuielilor) 
+	si raportul cheltuielilor in functie de categorie (statistica chart), care permit utilizatorului un overview rapid asupra bugetului
+	
+	-in aceeasi arie de rapoarte utilizatorul poate vedea totalul cheltuielilor si totalul venurilor
+	
+	-exista doua arii specifice, Income si Expense, in care se poate adauga individual un venit/cheltuiala 
+	prin deschiderea unui formular, 
+	-de asemenea utilizatorul are mereu in view toata lista de venituri/cheltuieli (numele si suma venit/cheltuiala)
+	-la click pe un item din lista poate vedea detaliile complete ale itemului(nume, suma, categorie, moneda, data, descriere)
+	-poate edita fiecare camp al itemului si sa-l actualizeze in lista
+	-poate sterge orice item din lista
+	
+	-exista si posibilitatea pentru utilizator de a adauga o categorie noua pentru cheltuieli
+	-lista de categorii este usor vizibila in zona de rapoarte
+	
+	-veniturile si cheltuielile pot fi gestionate in variate monede (lista este predefinita) 
+	-exista o zona in aplicatie (in dreptul profilului userului) in care este vizibila defalcarea cheltuielilor
+	in funcie de fiecare moneda
+	
+	-toate actiunile sunt dinamice, toate calculele se updateaza imediat
+	
+	Tehnologii folosite:
+	-HTML
+	-CSS
+	-JavaScript
+	-React si alte librarii JS
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
