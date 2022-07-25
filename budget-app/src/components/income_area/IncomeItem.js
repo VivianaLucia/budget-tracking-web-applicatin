@@ -2,7 +2,7 @@ import React, { useContext, useState, useCallback } from "react";
 import { IncomeContext } from "../../contexts/IncomeContext";
 import "react-datepicker/dist/react-datepicker.css";
 
-const IncomeItem = ({ income }) => {
+const IncomeItem = ({ income, showIncomes, onIncomeDetailsToggle }) => {
   const { dispatch } = useContext(IncomeContext);
   const [incomeName, setIncomeName] = useState(income.name);
   const [incomeAmount, setIncomeAmount] = useState(income.amount);
@@ -36,45 +36,17 @@ const IncomeItem = ({ income }) => {
     fontSize: "smaller",
   };
 
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-
-      dispatch({
-        type: "EDIT_INCOME",
-        income: {
-          name: incomeName,
-          amount: incomeAmount,
-          currency: incomeCurrency,
-          dateAdded: incomeDateAdded,
-          description: incomeDescription,
-          id: income.id,
-        },
-      });
-    },
-    [
-      incomeName,
-      incomeAmount,
-
-      incomeCurrency,
-      incomeDateAdded,
-      incomeDescription,
-      income,
-      dispatch,
-    ]
-  );
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     dispatch({
       type: "EDIT_INCOME",
       income: {
-        incomeName,
-        incomeAmount,
-        incomeCurrency,
-        incomeDateAdded,
-        incomeDescription,
+        name: incomeName,
+        amount: incomeAmount,
+        currency: incomeCurrency,
+        dateAdded: incomeDateAdded,
+        description: incomeDescription,
         id: income.id,
       },
     });
@@ -83,9 +55,35 @@ const IncomeItem = ({ income }) => {
     dispatch({ type: "REMOVE_INCOME", id: income.id });
   };
 
+  const toggleIncomeDetails = useCallback(() => {
+    onIncomeDetailsToggle(income.id);
+  }, [onIncomeDetailsToggle, income]);
+
+  if (!showIncomes.includes(income.id)) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "200px",
+          backgroundColor: "#5c5470",
+          borderRadius: "8px",
+          margin: "2px",
+          padding: "3px",
+        }}
+        onClick={toggleIncomeDetails}
+      >
+        <div>{income.name}</div>
+        <div>
+          {income.amount} {income.currency}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           onChange={onChangeIncomeName}
           value={incomeName}

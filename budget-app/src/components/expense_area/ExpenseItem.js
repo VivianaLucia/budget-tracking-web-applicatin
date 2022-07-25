@@ -38,36 +38,6 @@ const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
     color: "#A2B5BB",
     fontSize: "smaller",
   };
-  const onSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-
-      dispatch({
-        type: "EDIT_EXPENSE",
-        expense: {
-          name: expenseName,
-          amount: expenseAmount,
-          category: expenseCategory,
-          currency: expenseCurrency,
-          dateAdded: expenseDateAdded,
-          description: expenseDescription,
-          id: expense.id,
-        },
-      });
-      console.log(expense);
-      onExpenseDetailsToggle(expense.id);
-    },
-    [
-      expenseName,
-      expenseAmount,
-      expenseCategory,
-      expenseCurrency,
-      expenseDateAdded,
-      expenseDescription,
-      expense,
-      dispatch,
-    ]
-  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,12 +45,12 @@ const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
     dispatch({
       type: "EDIT_EXPENSE",
       expense: {
-        expenseName,
-        expenseAmount,
-        expenseCategory,
-        expenseCurrency,
-        expenseDateAdded,
-        expenseDescription,
+        name: expenseName,
+        amount: expenseAmount,
+        category: expenseCategory,
+        currency: expenseCurrency,
+        dateAdded: expenseDateAdded,
+        description: expenseDescription,
         id: expense.id,
       },
     });
@@ -101,7 +71,10 @@ const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
           display: "flex",
           justifyContent: "space-between",
           width: "200px",
-          backgroundColor: "green",
+          backgroundColor: "#5c5470",
+          borderRadius: "8px",
+          margin: "2px",
+          padding: "3px",
         }}
         onClick={toggleExpenseDetails}
       >
@@ -115,7 +88,7 @@ const ExpenseItem = ({ expense, showExpenses, onExpenseDetailsToggle }) => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           onChange={onChangeExpenseName}
           value={expenseName}

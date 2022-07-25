@@ -62,18 +62,8 @@ const CalculateSpendingBasedOnCategoryList = ({
         },
       },
       theme: {
-        palette: "palette8",
+        palette: ["palette8", "red", "purple"],
       },
-      //fill: {
-      // colors: [
-      //   "#FF4949",
-      //   "#A149FA",
-      //   "#F900BF",
-      //   "#548CFF",
-      //   "#06FF00",
-      //   "#FBFF00",
-      // ]
-      //},
     },
   });
 
